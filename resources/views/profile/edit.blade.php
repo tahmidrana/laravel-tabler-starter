@@ -12,6 +12,8 @@
             <form action="{{ route('profile.edit') }}" method="POST" novalidate>
                 @csrf
                 @method('patch')
+
+                {{-- <i class="ti ti-brand-auth0 fs-2"></i> --}}
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6">

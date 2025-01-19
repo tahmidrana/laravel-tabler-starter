@@ -36,6 +36,9 @@
             font-feature-settings: "cv03", "cv04", "cv11";
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    {{-- <link rel="stylesheet" href="{{ asset('dist/css/tabler-icons.min.css') }}" /> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -67,6 +70,8 @@
                 </div>
             </div>
             @endisset
+
+            @yield('breadcrumbs')
 
             <!-- Page body -->
             <div class="page-body">
