@@ -28,6 +28,18 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        $user = auth()->user();
+        /* $roles = $user->roles;
+        if ($roles->count()) {
+            $primary_role = $user->roles()->where('is_primary', 1)->first();
+            session(['roles' => $roles]);
+            session(['role' => $primary_role]);
+            session(['role_id' => $primary_role->id]);
+        } */
+
+        $user->last_login = now();
+        $user->save();
+
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
