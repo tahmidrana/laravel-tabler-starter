@@ -16,6 +16,7 @@ class MenuController extends Controller
             ->orderBy('id')
             ->orderBy('menu_order')
             ->get();
+
         return view('admin.admin-console.menus.index', compact('menus'));
     }
 

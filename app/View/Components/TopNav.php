@@ -29,6 +29,7 @@ class TopNav extends Component
             ->orderBy('id')
             ->get(); */
 
+        // Cache::forget('menus_'.$user_id);
         $this->menus = Cache::remember('menus_'.$user_id, 60 * 60, function () use ($user) {
             return Menu::query()
                 ->withCount('childMenus')
